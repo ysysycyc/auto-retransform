@@ -36,9 +36,15 @@ source "$(dirname "$0")/common.sh"
 CLASS_NAME=$(basename "$CLASS_SRC")
 echo "Using CLASS_NAME: $CLASS_NAME"
 
-# 执行上传
-upload_class_file
-
-# 执行热更新
-hot_update_class
-
+# 循环处理所有服务器
+for SERVER in "${SERVERS[@]}"; do
+    REMOTE_HOST=$(echo $SERVER | cut -d',' -f1)
+    REMOTE_PORT=$(echo $SERVER | cut -d',' -f2)
+    REMOTE_USER=$(echo $SERVER | cut -d',' -f3)
+    REMOTE_PASSWORD=$(echo $SERVER | cut -d',' -f4)
+    echo "Processing server: $REMOTE_HOST"
+    # 执行上传
+    upload_class_file
+    # 执行热更新
+    hot_update_class
+done

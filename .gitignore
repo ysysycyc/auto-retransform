@@ -1,3 +1,9 @@
 *.idea
 *.iml
 .DS_Store
+
+# 忽略文件夹中的所有内容
+configs/*
+
+# 排除特定文件
+!configs/demo.sh
