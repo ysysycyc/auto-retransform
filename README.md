@@ -21,8 +21,8 @@ sh main.sh configs/demo.sh /class-path/demo.class
 > 在IDEA中可以使用cmd+shift+C快捷获取
 
 # TODO
-- [x] 使用 Maven 自动将最新代码编译为 .class 文件
-- [x] 支持同时上传多个 .class 文件并热更新
+- [ ] 使用 Maven 自动将最新代码编译为 .class 文件
+- [ ] 支持同时上传多个 .class 文件并热更新
 - [x] 多服务器支持
 
 # 特别说明
